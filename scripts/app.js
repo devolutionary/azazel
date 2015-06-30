@@ -1,21 +1,23 @@
 
-var app = angular.module('azazel', []);
+var app = angular.module('azazel', [
+    'ngRoute',
+    'azazelControllers'
+]);
 
-app.controller('blogController', function($scope) {
-        $scope.form = [
-            {
-                "index": "title",
-                "label": "Title",
-                "format": "text",
-                "required": true,
-                "maxlength": 140
-            },
-            {
-                "index": "date",
-                "label": "Date",
-                "format": "datetime",
-                "required": true
-            }
-        ];
-});
+app.confg(['$routeProvider',
+    function ($routeProvider) {
+        $routeProvider.
+            when('/article', {
+                templateUrl: 'templates/article.small.html',
+                controller: 'blogController'
+            });
+    }
+]);
 
+var azazelControllers = angular.module('azazelControllers', []);
+
+azazelControllers.controller('blogController', ['$scope', '$http',
+    function ($scope,$http) {
+
+    }
+]);

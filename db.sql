@@ -10,6 +10,7 @@ drop table if exists tags;
 
 create table articles (
 articleID INT(11) NOT NULL AUTO_INCREMENT,
+url varchar(150) NOT NULL,
 title VARCHAR(150) NOT NULL,
 subtext TEXT NULL,
 content TEXT NULL,
