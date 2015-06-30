@@ -1,5 +1,6 @@
 create database if not exists raphael;
-
+create user 'euripides'@'localhost' identified by 'gYt6Qla6lqLMr4yZaJBewwLHDD6bu2t7';
+grant all privileges on raphael.* to euripides@localhost;
 use raphael
 
 drop table if exists article_has_tag;

@@ -1,0 +1,8 @@
+{
+    "default": {
+        "database": "raphael",
+        "user": "euripides",
+        "pass": "gYt6Qla6lqLMr4yZaJBewwLHDD6bu2t7",
+        "host": "localhost"
+    }
+}
