@@ -1,5 +1,11 @@
 <?php
 
+// Report all PHP errors
+error_reporting(-1);
+
+// Same as error_reporting(E_ALL);
+ini_set('error_reporting', E_ALL);
+
 class Database
 {
     private $conn = false;
@@ -9,7 +15,7 @@ class Database
 
 
     public function __construct($context = "default") {
-        $this->contexts = json_decode(file_get_contents(CLASS_PATH."database/database.conf.json"), true);
+        $this->contexts = json_decode(file_get_contents(CLASS_PATH."database.conf.json"), true);
         $this->setContext($context);
     }
 
