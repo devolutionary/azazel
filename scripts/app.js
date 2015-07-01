@@ -24,7 +24,7 @@ azazelControllers.controller('articleDetailCtrl', ['$scope', '$http', '$routePar
         $http({
             url: '/rest/index.php',
             method: "POST",
-            data: {"controller":"article"}
+            data: {"controller":"article", "action":"all"}
         }).success(function(data, status, header, config) {
             $scope.data = data;
         }).error(function(data, status, headers, config) {
