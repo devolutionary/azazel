@@ -13,15 +13,16 @@ $post = json_decode(file_get_contents("php://input"), true);
 
 
 if (isset($post['controller'])) {
-    call_user_func($post['controller']."Controller");
+    call_user_func($post['controller']."Controller", $post);
+    print_r($post);
 }
 
 
-function articleController() {
-    print_r(json_encode(array('test' => 'hi!')));
+function articleController($post) {
+
 }
 
-
+/*
 if (isset($_GET['populate'])) {
     for ($i = 0; $i < 25; $i++) {
         $params = array(
@@ -47,6 +48,6 @@ function generateRandomString($n) {
     }
     return $str;
 }
-
+*/
 ?>
 

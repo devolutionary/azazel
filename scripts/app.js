@@ -36,8 +36,16 @@ azazelControllers.controller('articleDetailCtrl', ['$scope', '$http', '$routePar
 
 
 
-app.config(['$routeProvider',
-    function($routeProvider) {
+app.config(['$routeProvider', '$locationProvider',
+    function($routeProvider, $locationProvider) {
+
+        if(window.history && window.history.pushState){
+            $locationProvider.html5Mode({
+                enabled: true,
+                requireBase: false
+            });
+        }
+
         $routeProvider.when('/article', {
                 templateUrl: 'templates/articles.html',
                 controller: 'articleCtrl'
@@ -50,5 +58,6 @@ app.config(['$routeProvider',
             }).otherwise({
                 redirectTo: '/'
             });
+
     }
 ]);
